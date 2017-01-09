@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attribute & Class Binding With v-bind </title>
+	<style type="text/css">
+		.anchor-color {
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<div id="root">
+<!-- Here v-on:click can also be written as @click and attributes can be :title -->
+<a href="" v-bind:title='title' @click="dummy" :class="className">Click Me!</a>
+	
+</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el : "#root",
+			data : {
+				title : 'This is anchor tag\'s title',
+				className : 'anchor-color'
+			},
+			methods: {	
+				dummy :function() {
+					alert("works");
+				}
+			}
+
+
+		});
+	</script>
+
+</body>
+</html>
