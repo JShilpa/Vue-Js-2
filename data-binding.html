@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Binding in Vue Js 2</title>
+</head>
+<body>
+	<div id="root">
+		<input type="text" name="" id="input" v-model="greet.message"/>	
+		<p>Entered input text is {{ greet.message }}</p>
+	</div>
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	<script type="text/javascript">
+		let greet ={
+			'message' : 'Hello World'
+		};
+
+		//Create new instance of Vue Js
+
+		new Vue({
+			'el' : '#root',
+			data : greet
+		});
+	</script>
+
+</body>
+</html>
