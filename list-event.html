@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List and User Events</title>
+</head>
+<body>
+	<div id="root">
+
+		<ul>
+			<li v-for="name in names">{{ name.name}}</li>
+		</ul>
+		<input type="text" name="" v-model="message"> 
+		<button v-on:click="addName">Add New Name</button>
+		
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el : '#root',
+			data : {
+				names : [
+				{
+					'no' : 1,
+					'name' : 'Joe'
+				},
+				{
+					'no' : 2,
+					'name' : 'John'
+				},
+
+				],
+				'message' : ''
+			},
+			methods: {
+				addName : function(){
+					// alert(this.message);
+					this.names.push({ 'no' : 3, 'name' : this.message });
+					this.message='';
+
+				}
+			}
+		})
+	</script>
+
+</body>
+</html>
